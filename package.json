@@ -1,0 +1,19 @@
+{
+  "name": "the-schaguilars-email-templates",
+  "version": "1.0.0",
+  "description": "TheSchaguilars Email Templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andy-aguilar/the-schaguilars-email-templates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andy-aguilar/the-schaguilars-email-templates/issues"
+  },
+  "homepage": "https://github.com/andy-aguilar/the-schaguilars-email-templates#readme"
+}

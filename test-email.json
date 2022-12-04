@@ -1,0 +1,8 @@
+{
+    "Source": "Kristin and Andy <TheFutureAguilars@kristinandandy.com>",
+    "Template": "rsvpEmail",
+    "Destination": {
+        "ToAddresses": ["aaguil3@gmail.com"]
+    },
+    "TemplateData": "{\"addressLabel\": \"Mr. Andres Aguilar and Ms. Kristin Schallhorn\", \"id\": \"b4681743-2921-4cad-b135-c98560d65787\" }"
+}
