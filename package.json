@@ -10,13 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/andy-aguilar/the-schaguilars-email-templates.git"
   },
-  "author": "",
+  "author": "Andres Aguilar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andy-aguilar/the-schaguilars-email-templates/issues"
   },
   "homepage": "https://github.com/andy-aguilar/the-schaguilars-email-templates#readme",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.223.0",
     "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10"
   }
 }
