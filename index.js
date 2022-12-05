@@ -51,9 +51,7 @@ var params = {
     ProjectionExpression: "#AL, #EA, #ID",
     TableName: "Rsvp-r3yc2rbtbnarxhyeptux54mu3e-prod"
 };
-var FILTER_EMAILS = [
-    "aaguil3@gmail.com",
-];
+var FILTER_EMAILS = ["aaguil3@gmail.com"];
 function isEmailValid(email) {
     if (!email) {
         return false;
@@ -77,7 +75,7 @@ function runScript() {
                                 TemplateData: JSON.stringify({ addressLabel: "test", id: "1235" })
                             }
                         },
-                        FromEmailAddress: "TheFutureAguilars@kristinandandy.com"
+                        FromEmailAddress: "Kristin and Andy <TheFutureAguilars@kristinandandy.com>"
                     };
                     console.log(sendBulkEmailCommandInput);
                     var command = new client_sesv2_1.SendBulkEmailCommand(sendBulkEmailCommandInput);

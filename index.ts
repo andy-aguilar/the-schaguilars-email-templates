@@ -25,9 +25,7 @@ const params = {
   TableName: "Rsvp-r3yc2rbtbnarxhyeptux54mu3e-prod",
 };
 
-const FILTER_EMAILS: string[] = [
-  "aaguil3@gmail.com",
-];
+const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
 
 function isEmailValid(email: string | undefined): boolean {
   if (!email) {
@@ -53,7 +51,8 @@ async function runScript(): Promise<void> {
             TemplateData: JSON.stringify({ addressLabel: "test", id: "1235" }),
           },
         },
-        FromEmailAddress: "TheFutureAguilars@kristinandandy.com",
+        FromEmailAddress:
+          "Kristin and Andy <TheFutureAguilars@kristinandandy.com>",
       };
 
       console.log(sendBulkEmailCommandInput);
