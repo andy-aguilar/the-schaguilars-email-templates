@@ -27,7 +27,6 @@ const params = {
 
 const FILTER_EMAILS: string[] = [
   "aaguil3@gmail.com",
-  "valerieaguilar430@gmail.com",
 ];
 
 function isEmailValid(email: string | undefined): boolean {
