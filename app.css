@@ -1,0 +1,26 @@
+
+  #email-body h1 {
+    font-family: "Playfair Display", serif;
+    color: #185945;
+    margin: 0.4em auto 0.4em;
+    font-size: 2em;
+    font-weight: 300;
+  }
+
+  #email-body p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2em;
+    font-weight: 200;
+  }
+
+  #email-body a {
+    color: #185945;
+  }
+
+  #email-body a:active {
+    color: #9a9490;
+  }
+
+  #email-body a:visited {
+    color: #9a9490;
+  }
