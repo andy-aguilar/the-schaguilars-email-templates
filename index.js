@@ -53,7 +53,6 @@ var params = {
 };
 var FILTER_EMAILS = [
     "aaguil3@gmail.com",
-    "valerieaguilar430@gmail.com",
 ];
 function isEmailValid(email) {
     if (!email) {
