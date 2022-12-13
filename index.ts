@@ -6,6 +6,7 @@ import {
   SendBulkEmailCommand,
   BulkEmailEntry,
 } from "@aws-sdk/client-sesv2";
+import {DB_TABLE_NAME} from './dbconfig.const'
 
 var AWS = require("aws-sdk");
 
@@ -23,7 +24,7 @@ const params = {
     "#HR": "hasRsvped",
   },
   ProjectionExpression: "#AL, #EA, #ID, #HR",
-  TableName: "Rsvp-r3yc2rbtbnarxhyeptux54mu3e-prod",
+  TableName: DB_TABLE_NAME,
 };
 
 // const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
