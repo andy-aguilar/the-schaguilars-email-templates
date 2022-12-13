@@ -27,7 +27,7 @@ const params = {
   TableName: DB_TABLE_NAME,
 };
 
-// const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
+const FILTER_EMAILS: string[] = ["aaguil3@gmail.com", "Kattyaaguilar@me.com"];
 
 function isEmailValid(email: string | undefined): boolean {
   if (!email) {
@@ -107,6 +107,10 @@ function getFilteredRecords(
 
   const filteredRecords: (InvitationEmailDataObject | null)[] =
     unpackedRecords.filter((record) => {
+      if(record && FILTER_EMAILS.includes(record.emailAddress)){
+        return true
+      }
+
       return isEmailValid(record?.emailAddress) && !record?.hasRsvped;
     });
 

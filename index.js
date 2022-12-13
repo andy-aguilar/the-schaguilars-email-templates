@@ -53,7 +53,7 @@ var params = {
     ProjectionExpression: "#AL, #EA, #ID, #HR",
     TableName: dbconfig_const_1.DB_TABLE_NAME
 };
-// const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
+var FILTER_EMAILS = ["aaguil3@gmail.com", "Kattyaaguilar@me.com"];
 function isEmailValid(email) {
     if (!email) {
         return false;
@@ -117,6 +117,9 @@ function getBulkEmailEntryFromRecord(record) {
 function getFilteredRecords(records) {
     var unpackedRecords = db_entries_response_to_invitation_email_converter_1.DBAllEntriesResponseToInvitationEmailConverter.convertAll(records);
     var filteredRecords = unpackedRecords.filter(function (record) {
+        if (record && FILTER_EMAILS.includes(record.emailAddress)) {
+            return true;
+        }
         return isEmailValid(record === null || record === void 0 ? void 0 : record.emailAddress) && !(record === null || record === void 0 ? void 0 : record.hasRsvped);
     });
     return filteredRecords;
