@@ -23,7 +23,7 @@ const params = {
     "#HR": "hasRsvped",
   },
   ProjectionExpression: "#AL, #EA, #ID, #HR",
-  TableName: "Rsvp-xdgcfyjunzethfnkmagpzlewcy-staging",
+  TableName: "Rsvp-r3yc2rbtbnarxhyeptux54mu3e-prod",
 };
 
 // const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
@@ -33,7 +33,7 @@ function isEmailValid(email: string | undefined): boolean {
     return false;
   }
 
-  return true
+  return true;
 }
 
 async function runScript(): Promise<void> {
