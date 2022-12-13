@@ -14,8 +14,9 @@ export class DBAllEntriesResponseToInvitationEmail extends BaseConverter<
     const emailAddress: string = t.emailAddress.S;
     const addressLabel: string = t.addressLabel.S;
     const id: string = t.id.S;
+    const hasRsvped: boolean = t.hasRsvped.BOOL;
 
-    return { emailAddress, addressLabel, id };
+    return { emailAddress, addressLabel, id, hasRsvped };
   }
 
   doBackward(u: InvitationEmailDataObject): AllDBEntriesResponse | null {
@@ -31,6 +32,9 @@ export class DBAllEntriesResponseToInvitationEmail extends BaseConverter<
       },
       id: {
         S: u.id,
+      },
+      hasRsvped: {
+        BOOL: u.hasRsvped,
       },
     };
   }

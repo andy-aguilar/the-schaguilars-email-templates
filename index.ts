@@ -20,19 +20,20 @@ const params = {
     "#AL": "addressLabel",
     "#EA": "emailAddress",
     "#ID": "id",
+    "#HR": "hasRsvped",
   },
-  ProjectionExpression: "#AL, #EA, #ID",
-  TableName: "Rsvp-r3yc2rbtbnarxhyeptux54mu3e-prod",
+  ProjectionExpression: "#AL, #EA, #ID, #HR",
+  TableName: "Rsvp-xdgcfyjunzethfnkmagpzlewcy-staging",
 };
 
-const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
+// const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
 
 function isEmailValid(email: string | undefined): boolean {
   if (!email) {
     return false;
   }
 
-  return FILTER_EMAILS.includes(email);
+  return true
 }
 
 async function runScript(): Promise<void> {
@@ -104,7 +105,9 @@ function getFilteredRecords(
     DBAllEntriesResponseToInvitationEmailConverter.convertAll(records);
 
   const filteredRecords: (InvitationEmailDataObject | null)[] =
-    unpackedRecords.filter((record) => isEmailValid(record?.emailAddress));
+    unpackedRecords.filter((record) => {
+      return isEmailValid(record?.emailAddress) && !record?.hasRsvped;
+    });
 
   return filteredRecords;
 }

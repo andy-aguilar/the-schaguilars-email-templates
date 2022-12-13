@@ -29,7 +29,8 @@ var DBAllEntriesResponseToInvitationEmail = /** @class */ (function (_super) {
         var emailAddress = t.emailAddress.S;
         var addressLabel = t.addressLabel.S;
         var id = t.id.S;
-        return { emailAddress: emailAddress, addressLabel: addressLabel, id: id };
+        var hasRsvped = t.hasRsvped.BOOL;
+        return { emailAddress: emailAddress, addressLabel: addressLabel, id: id, hasRsvped: hasRsvped };
     };
     DBAllEntriesResponseToInvitationEmail.prototype.doBackward = function (u) {
         if (!u) {
@@ -44,6 +45,9 @@ var DBAllEntriesResponseToInvitationEmail = /** @class */ (function (_super) {
             },
             id: {
                 S: u.id
+            },
+            hasRsvped: {
+                BOOL: u.hasRsvped
             }
         };
     };

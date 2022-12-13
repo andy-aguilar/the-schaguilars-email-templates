@@ -46,17 +46,18 @@ var params = {
     ExpressionAttributeNames: {
         "#AL": "addressLabel",
         "#EA": "emailAddress",
-        "#ID": "id"
+        "#ID": "id",
+        "#HR": "hasRsvped"
     },
-    ProjectionExpression: "#AL, #EA, #ID",
-    TableName: "Rsvp-r3yc2rbtbnarxhyeptux54mu3e-prod"
+    ProjectionExpression: "#AL, #EA, #ID, #HR",
+    TableName: "Rsvp-xdgcfyjunzethfnkmagpzlewcy-staging"
 };
-var FILTER_EMAILS = ["aaguil3@gmail.com"];
+// const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
 function isEmailValid(email) {
     if (!email) {
         return false;
     }
-    return FILTER_EMAILS.includes(email);
+    return true;
 }
 function runScript() {
     return __awaiter(this, void 0, void 0, function () {
@@ -114,7 +115,9 @@ function getBulkEmailEntryFromRecord(record) {
 }
 function getFilteredRecords(records) {
     var unpackedRecords = db_entries_response_to_invitation_email_converter_1.DBAllEntriesResponseToInvitationEmailConverter.convertAll(records);
-    var filteredRecords = unpackedRecords.filter(function (record) { return isEmailValid(record === null || record === void 0 ? void 0 : record.emailAddress); });
+    var filteredRecords = unpackedRecords.filter(function (record) {
+        return isEmailValid(record === null || record === void 0 ? void 0 : record.emailAddress) && !(record === null || record === void 0 ? void 0 : record.hasRsvped);
+    });
     return filteredRecords;
 }
 runScript();
