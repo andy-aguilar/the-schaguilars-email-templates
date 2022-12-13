@@ -38,6 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var db_entries_response_to_invitation_email_converter_1 = require("./util/converter/db-entries-response-to-invitation-email.converter");
 var client_sesv2_1 = require("@aws-sdk/client-sesv2");
+var dbconfig_const_1 = require("./dbconfig.const");
 var AWS = require("aws-sdk");
 AWS.config.update({ region: "us-east-2" });
 var ddb = new AWS.DynamoDB();
@@ -50,7 +51,7 @@ var params = {
         "#HR": "hasRsvped"
     },
     ProjectionExpression: "#AL, #EA, #ID, #HR",
-    TableName: "Rsvp-r3yc2rbtbnarxhyeptux54mu3e-prod"
+    TableName: dbconfig_const_1.DB_TABLE_NAME
 };
 // const FILTER_EMAILS: string[] = ["aaguil3@gmail.com"];
 function isEmailValid(email) {
