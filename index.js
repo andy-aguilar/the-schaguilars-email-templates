@@ -53,7 +53,7 @@ var params = {
     ProjectionExpression: "#AL, #EA, #ID, #HR",
     TableName: dbconfig_const_1.DB_TABLE_NAME
 };
-var FILTER_EMAILS = ["aaguil3@gmail.com", "Kattyaaguilar@me.com"];
+var FILTER_EMAILS = ["soledadplazafc@gmail.com"];
 function isEmailValid(email) {
     if (!email) {
         return false;
@@ -120,7 +120,7 @@ function getFilteredRecords(records) {
         if (record && FILTER_EMAILS.includes(record.emailAddress)) {
             return true;
         }
-        return isEmailValid(record === null || record === void 0 ? void 0 : record.emailAddress) && !(record === null || record === void 0 ? void 0 : record.hasRsvped);
+        // return isEmailValid(record?.emailAddress) && !record?.hasRsvped;
     });
     return filteredRecords;
 }
